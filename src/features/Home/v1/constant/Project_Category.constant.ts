@@ -10,7 +10,8 @@ export const PROJECT_CATEGORY_CONSTANT: Project_Category_Type = {
     {
       _id: 2,
       Category_Name: 'HTML/CSS/JS Project',
-      Category_Url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhackr.io%2Fblog%2Fjavascript-projects%2Fthumbnail%2Flarge&f=1&nofb=1&ipt=f4e83d47540797193fa042bbc12bb4f7bbf39652d0f86c05904a3dc85ffea6a7',
+      Category_Url:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhackr.io%2Fblog%2Fjavascript-projects%2Fthumbnail%2Flarge&f=1&nofb=1&ipt=f4e83d47540797193fa042bbc12bb4f7bbf39652d0f86c05904a3dc85ffea6a7',
     },
     {
       _id: 3,

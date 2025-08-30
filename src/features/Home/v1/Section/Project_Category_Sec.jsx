@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { MdArrowOutward } from "react-icons/md";
+import { MdArrowOutward } from 'react-icons/md';
 
 const chunkArray = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
@@ -41,27 +41,41 @@ const Project_Category_Sec = () => {
                 {slide.map((cat) => (
                   <a
                     key={cat._id}
-                    href={`project/${cat.Category_Name.toLowerCase().replaceAll("/", '-')}`}
-                    target={cat.Category_Url.startsWith('http') ? '_blank' : '_self'}
-                    rel={cat.Category_Url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    href={`project/${cat.Category_Name.toLowerCase().replaceAll('/', '-')}`}
+                    target={
+                      cat.Category_Url.startsWith('http') ? '_blank' : '_self'
+                    }
+                    rel={
+                      cat.Category_Url.startsWith('http')
+                        ? 'noopener noreferrer'
+                        : undefined
+                    }
                     className="bg-gradient-to-br bg-[#2A2A2A] rounded-xl shadow-lg w-[28vw] h-[45vh] flex flex-col items-center justify-center text-white font-semibold text-xl transition-transform "
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="Category_Image h-[70%] w-full">
                       <img
-                        src={cat.Category_Url.startsWith('http') ? cat.Category_Url : '/default-image.png'}
+                        src={
+                          cat.Category_Url.startsWith('http')
+                            ? cat.Category_Url
+                            : '/default-image.png'
+                        }
                         alt={cat.Category_Name}
                         className="h-full w-full object-cover rounded-tl-2xl rounded-tr-2xl"
                       />
                     </div>
                     <div className="h-[30%] w-full flex justify-between px-[2vw] mt-[3vh]">
-                        <div className="">
-                        <h4 className='text-[0.8vw] text-gray-300'>CLICK HERE TO VISIT</h4>
-                        <h3 className='text-white mt-[1vh] text-[1vw]'>{cat.Category_Name}</h3>
-                        </div>
-                        <div className="Right">
-                        <MdArrowOutward className='text-[1vw]'/>
-                        </div>
+                      <div className="">
+                        <h4 className="text-[0.8vw] text-gray-300">
+                          CLICK HERE TO VISIT
+                        </h4>
+                        <h3 className="text-white mt-[1vh] text-[1vw]">
+                          {cat.Category_Name}
+                        </h3>
+                      </div>
+                      <div className="Right">
+                        <MdArrowOutward className="text-[1vw]" />
+                      </div>
                     </div>
                   </a>
                 ))}
