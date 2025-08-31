@@ -9,14 +9,17 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { MdArrowOutward } from 'react-icons/md';
+import { Project_Category_Obj } from '../type/Project_Category.type'
 import Link from 'next/link';
 
-const chunkArray = (arr, size) =>
+const chunkArray = (arr: any, size: number) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size)
   );
 
-const getItemsPerSlide = (width) => {
+
+
+const getItemsPerSlide = (width: number) => {
   if (width < 640) return 1;
   if (width < 1024) return 2;
   return 3;
@@ -54,7 +57,7 @@ const Project_Category_Sec = () => {
           <CarouselContent>
             {slides.map((slide, idx) => (
               <CarouselItem key={idx} className="flex gap-6 justify-center">
-                {slide.map((cat) => (
+                {slide.map((cat: Project_Category_Obj) => (
                   <Link
                     key={cat._id}
                     href={`project/${cat.Category_Name.toLowerCase().replaceAll('/', '-')}`}
