@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import { PROJECT_CATEGORY_CONSTANT } from '../constant/Project_Category.constant';
 import {
   Carousel,
@@ -8,50 +9,60 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { MdArrowOutward } from 'react-icons/md';
+import Link from 'next/link';
 
 const chunkArray = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size)
   );
 
+const getItemsPerSlide = (width) => {
+  if (width < 640) return 1;
+  if (width < 1024) return 2;
+  return 3;
+};
+
 const Project_Category_Sec = () => {
   const categories = PROJECT_CATEGORY_CONSTANT.Project_Category_Array;
-  const slides = chunkArray(categories, 3); // 3 items per slide
+  const [itemsPerSlide, setItemsPerSlide] = useState(
+    getItemsPerSlide(typeof window !== 'undefined' ? window.innerWidth : 1200)
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerSlide(getItemsPerSlide(window.innerWidth));
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const slides = chunkArray(categories, itemsPerSlide);
 
   return (
     <div className="w-screen py-10">
-      <h2
-        className="text-[2.5vw] font-bold text-center mt-[7vh] mb-6"
-        style={{
-          background: 'linear-gradient(90deg, #FF8660 0%, #D5491D 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          color: 'transparent',
-        }}
-      >
-        Projects Category
-      </h2>
+   <h2
+  className="text-[3.8vw] lg:text-[1.8vw] font-bold text-center mt-[7vh] mb-6 
+             bg-gradient-to-r from-gray-900 to-gray-700 
+             dark:from-[#FF8660] dark:to-[#D5491D] 
+             bg-clip-text text-transparent"
+>
+  Projects Category
+</h2>
 
-      <div className="w-full flex items-center justify-center mt-[8vh]">
-        <Carousel className="w-[90%]">
+      <div className="w-full flex items-center justify-center flex-wrap mt-[8vh]">
+        <Carousel className="w-full max-w-[1200px] px-2 overflow-hidden">
           <CarouselContent>
             {slides.map((slide, idx) => (
               <CarouselItem key={idx} className="flex gap-6 justify-center">
                 {slide.map((cat) => (
-                  <a
+                  <Link
                     key={cat._id}
                     href={`project/${cat.Category_Name.toLowerCase().replaceAll('/', '-')}`}
-                    target={
-                      cat.Category_Url.startsWith('http') ? '_blank' : '_self'
-                    }
-                    rel={
-                      cat.Category_Url.startsWith('http')
-                        ? 'noopener noreferrer'
-                        : undefined
-                    }
-                    className="bg-gradient-to-br bg-[#2A2A2A] rounded-xl shadow-lg w-[28vw] h-[45vh] flex flex-col items-center justify-center text-white font-semibold text-xl transition-transform "
-                    style={{ textDecoration: 'none' }}
+                    className="rounded-xl w-[90vw] md:w-[60vw] lg:w-[28vw] h-[32vh] md:h-[40vh] flex flex-col overflow-hidden 
+                               border border-gray-200 dark:border-none 
+                               bg-gray-50 dark:bg-gradient-to-br dark:from-[#232526] dark:to-[#2A2A2A] 
+                               shadow-sm dark:shadow-lg 
+                               transition-transform hover:scale-105"
                   >
                     <div className="Category_Image h-[70%] w-full">
                       <img
@@ -61,23 +72,21 @@ const Project_Category_Sec = () => {
                             : '/default-image.png'
                         }
                         alt={cat.Category_Name}
-                        className="h-full w-full object-cover rounded-tl-2xl rounded-tr-2xl"
+                        className="h-full w-full object-cover"
                       />
                     </div>
-                    <div className="h-[30%] w-full flex justify-between px-[2vw] mt-[3vh]">
-                      <div className="">
-                        <h4 className="text-[0.8vw] text-gray-300">
+                    <div className="h-[30%] w-full flex justify-between items-center px-[2vw] py-[2vh] bg-gray-50 dark:bg-transparent">
+                      <div>
+                        <h4 className="text-sm text-gray-600 dark:text-gray-300">
                           CLICK HERE TO VISIT
                         </h4>
-                        <h3 className="text-white mt-[1vh] text-[1vw]">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-1">
                           {cat.Category_Name}
                         </h3>
                       </div>
-                      <div className="Right">
-                        <MdArrowOutward className="text-[1vw]" />
-                      </div>
+                      <MdArrowOutward className="text-xl text-gray-700 dark:text-white" />
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </CarouselItem>
             ))}
