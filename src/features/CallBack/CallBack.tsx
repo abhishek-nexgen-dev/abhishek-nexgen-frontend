@@ -54,14 +54,18 @@ const CallBack = () => {
             Request a Call Back
           </DialogTitle>
           <DialogDescription className="text-gray-600 dark:text-gray-400">
-            Please enter your details and select a preferred date and time for the call.
+            Please enter your details and select a preferred date and time for
+            the call.
           </DialogDescription>
         </DialogHeader>
 
         <form className="flex flex-col gap-4 mt-4">
           {/* Name */}
           <div className="flex flex-col gap-2">
-            <Label htmlFor="name" className="text-xs text-gray-700 dark:text-gray-400">
+            <Label
+              htmlFor="name"
+              className="text-xs text-gray-700 dark:text-gray-400"
+            >
               Name
             </Label>
             <Input
@@ -75,7 +79,10 @@ const CallBack = () => {
 
           {/* Phone */}
           <div className="flex flex-col gap-2">
-            <Label htmlFor="phone" className="text-xs text-gray-700 dark:text-gray-400">
+            <Label
+              htmlFor="phone"
+              className="text-xs text-gray-700 dark:text-gray-400"
+            >
               Phone
             </Label>
             <Input
@@ -89,7 +96,10 @@ const CallBack = () => {
 
           {/* Date Picker */}
           <div className="flex flex-col gap-2">
-            <Label htmlFor="date" className="text-xs text-gray-700 dark:text-gray-400">
+            <Label
+              htmlFor="date"
+              className="text-xs text-gray-700 dark:text-gray-400"
+            >
               Select Date
             </Label>
             <Popover>
@@ -120,7 +130,9 @@ const CallBack = () => {
 
           {/* Time Picker */}
           <div className="flex flex-col gap-2">
-            <Label className="text-xs text-gray-700 dark:text-gray-400">Select Time</Label>
+            <Label className="text-xs text-gray-700 dark:text-gray-400">
+              Select Time
+            </Label>
             <div className="flex gap-2">
               {/* Hour */}
               <Select value={hour} onValueChange={setHour}>
@@ -136,7 +148,9 @@ const CallBack = () => {
                 </SelectContent>
               </Select>
 
-              <span className="self-center text-gray-900 dark:text-white">:</span>
+              <span className="self-center text-gray-900 dark:text-white">
+                :
+              </span>
 
               {/* Minute */}
               <Select value={minute} onValueChange={setMinute}>

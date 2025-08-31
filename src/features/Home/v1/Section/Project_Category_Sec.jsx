@@ -40,14 +40,14 @@ const Project_Category_Sec = () => {
 
   return (
     <div className="w-screen py-10">
-   <h2
-  className="text-[3.8vw] lg:text-[1.8vw] font-bold text-center mt-[7vh] mb-6 
+      <h2
+        className="text-[3.8vw] lg:text-[1.8vw] font-bold text-center mt-[7vh] mb-6 
              bg-gradient-to-r from-gray-900 to-gray-700 
              dark:from-[#FF8660] dark:to-[#D5491D] 
              bg-clip-text text-transparent"
->
-  Projects Category
-</h2>
+      >
+        Projects Category
+      </h2>
 
       <div className="w-full flex items-center justify-center flex-wrap mt-[8vh]">
         <Carousel className="w-full max-w-[1200px] px-2 overflow-hidden">
