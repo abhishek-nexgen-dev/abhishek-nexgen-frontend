@@ -9,15 +9,13 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { MdArrowOutward } from 'react-icons/md';
-import { Project_Category_Obj } from '../type/Project_Category.type'
+import { Project_Category_Obj } from '../type/Project_Category.type';
 import Link from 'next/link';
 
 const chunkArray = (arr: any, size: number) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
     arr.slice(i * size, i * size + size)
   );
-
-
 
 const getItemsPerSlide = (width: number) => {
   if (width < 640) return 1;

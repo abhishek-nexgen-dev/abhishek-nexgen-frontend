@@ -4,7 +4,6 @@ import React from 'react';
 import { EXPRESSION_WITH_CONSTANT } from '../constant/Expression_Sec.constant';
 import { ExpLogo } from '../type/Exp_Sec.type';
 
-
 const Expression_With_Sec = () => {
   return (
     <div className="w-screen py-16 bg-gradient-to-br ">
@@ -29,12 +28,10 @@ const Expression_With_Sec = () => {
                   boxShadow: '0 4px 24px rgba(253,253,253,0.12)',
                 }}
               >
-        
-             {React.cloneElement(item.icon, {
+                {React.cloneElement(item.icon, {
                   className:
                     'w-6 h-6 lg:w-12 lg:h-12 text-black dark:text-white transition-colors duration-300',
                 })}
-                
               </div>
               <span className="text-black dark:text-[#FDFDFD] text-base font-semibold tracking-wide drop-shadow">
                 {item.name}
