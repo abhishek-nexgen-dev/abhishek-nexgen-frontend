@@ -15,7 +15,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const Circle_Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-   
     const lenis = new Lenis({
       autoRaf: true,
     });
@@ -26,7 +25,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
     requestAnimationFrame(raf);
 
-
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
         if (value !== undefined) {
@@ -35,9 +33,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         return window.scrollY;
       },
       getBoundingClientRect() {
-        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
       },
-      pinType: document.body.style.transform ? "transform" : "fixed",
+      pinType: document.body.style.transform ? 'transform' : 'fixed',
     });
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -49,7 +52,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       // ScrollTrigger.kill();
     };
   }, []);
-
 
   const Handle_Cursor_Move = (e: React.MouseEvent<HTMLDivElement>) => {
     if (Circle_Ref.current) {
