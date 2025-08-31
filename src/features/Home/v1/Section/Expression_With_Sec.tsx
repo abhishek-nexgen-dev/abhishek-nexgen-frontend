@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import { EXPRESSION_WITH_CONSTANT } from '../constant/Expression_Sec.constant';
+import { ExpLogo } from '../type/Exp_Sec.type';
 
 const Expression_With_Sec = () => {
   return (
@@ -8,7 +11,7 @@ const Expression_With_Sec = () => {
         EXPERIENCE WITH
       </h1>
       <div className="flex flex-wrap justify-center items-center gap-2 md:gap-8 w-full">
-        {EXPRESSION_WITH_CONSTANT.map((item, index) => (
+        {EXPRESSION_WITH_CONSTANT.map((item: ExpLogo, index) => (
           <div
             key={index}
             className="flex flex-col items-center space-y-3 w-[25%] lg:w-fit "

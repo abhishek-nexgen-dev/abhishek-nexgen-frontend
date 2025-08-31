@@ -1,6 +1,6 @@
 export type ExpLogo = {
   name: string;
-  icon: React.ReactNode;
+  icon: React.ReactElement<any>;
   url?: string;
 };
 
