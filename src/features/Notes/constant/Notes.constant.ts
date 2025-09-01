@@ -5,19 +5,22 @@ let Notes_Constant_Array: Notes_Type = [
     _id: '1',
     title: 'HTML Notes',
     Notes_Image: 'https://www.codewithharry.com/img/notes/html.webp',
-    download_link: 'https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/HTML_Complete_Notes.pdf',
+    download_link:
+      'https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/HTML_Complete_Notes.pdf',
   },
   {
     _id: '2',
     title: 'CSS Notes',
     Notes_Image: 'https://www.codewithharry.com/img/notes/css.webp',
-    download_link: 'https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/CSS_Complete_Notes.pdf',
+    download_link:
+      'https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/CSS_Complete_Notes.pdf',
   },
   {
     _id: '3',
     title: 'JavaScript Notes',
     Notes_Image: 'https://www.codewithharry.com/img/notes/js.webp',
-    download_link: 'https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/JS_Chapterwise_Notes.pdf',
+    download_link:
+      'https://cwh-full-next-space.fra1.cdn.digitaloceanspaces.com/notes/JS_Chapterwise_Notes.pdf',
   },
   {
     _id: '4',
@@ -46,7 +49,7 @@ let Notes_Constant_Array: Notes_Type = [
     Notes_Image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.credly.com%2Fimages%2Fe4e5214a-e9f3-414c-9ebc-d10467a92816%2FData_Structures_and_Algorithms.png&f=1&nofb=1&ipt=aff29542638d7c655afffc2e25886f45035846ed6c3fdf3e4f828d86323e4b8f',
     download_link: 'https://dev.to/abhishek-nexgen-dev/series/32474',
-  }
+  },
 ];
 
 export default Notes_Constant_Array;

@@ -10,7 +10,7 @@ import { useCursor } from '@/context/CursorContext';
 import gsap from 'gsap';
 
 const Nav = () => {
-  let { cursorRef } = useCursor()
+  let { cursorRef } = useCursor();
   const [isDark, setIsDark] = useState(true);
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -45,12 +45,22 @@ const Nav = () => {
             href={link.href}
             onMouseEnter={() => {
               if (cursorRef.current) {
-               gsap.to(cursorRef.current, { scale: 2, backgroundColor: 'rgba(255, 134, 96, 0.8)', borderColor: '#FF8660', duration: 0.3 });
+                gsap.to(cursorRef.current, {
+                  scale: 2,
+                  backgroundColor: 'rgba(255, 134, 96, 0.8)',
+                  borderColor: '#FF8660',
+                  duration: 0.3,
+                });
               }
             }}
             onMouseLeave={() => {
               if (cursorRef.current) {
-               gsap.to(cursorRef.current, { scale: 1, backgroundColor: 'white', borderColor: '#FFFFFF', duration: 0.3 });
+                gsap.to(cursorRef.current, {
+                  scale: 1,
+                  backgroundColor: 'white',
+                  borderColor: '#FFFFFF',
+                  duration: 0.3,
+                });
               }
             }}
             target={link.external ? '_blank' : '_self'}
