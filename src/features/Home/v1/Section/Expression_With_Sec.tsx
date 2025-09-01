@@ -20,7 +20,7 @@ const Expression_With_Sec = () => {
               href={item.url ? item.url : '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center space-y-2"
+              className="flex flex-col items-center space-y-2 cursor-none"
             >
               <div
                 className="p-6 rounded-full bg-black/10 dark:bg-white/10 backdrop-blur-md shadow-lg hover:scale-110 transition-transform duration-300"
