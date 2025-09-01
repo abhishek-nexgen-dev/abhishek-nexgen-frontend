@@ -6,10 +6,12 @@ import { SunIcon } from './sun';
 import { MoonIcon } from './moon';
 import { Button } from '@/components/ui/button';
 import CallBack from '@/features/CallBack/CallBack';
+import { useCursor } from '@/context/CursorContext';
+import gsap from 'gsap';
 
 const Nav = () => {
+  let { cursorRef } = useCursor()
   const [isDark, setIsDark] = useState(true);
-
   useEffect(() => {
     document.documentElement.setAttribute(
       'data-theme',
@@ -18,7 +20,7 @@ const Nav = () => {
   }, [isDark]);
 
   return (
-    <div className="h-[10vh] w-screen bg-[#f1e9e9] dark:bg-[#222222] flex items-center justify-between px-6 shadow-sm dark:shadow-none">
+    <div className="h-[10vh] w-screen bg-[#f1e9e9] dark:bg-[#222222] flex items-center relative justify-between px-6 shadow-sm dark:shadow-none">
       <div
         className="Nav_Logo w-[30%] flex justify-end items-center"
         data-testid="Nav_Logo"
@@ -41,9 +43,19 @@ const Nav = () => {
           <Link
             key={link.href}
             href={link.href}
+            onMouseEnter={() => {
+              if (cursorRef.current) {
+               gsap.to(cursorRef.current, { scale: 2, backgroundColor: 'rgba(255, 134, 96, 0.8)', borderColor: '#FF8660', duration: 0.3 });
+              }
+            }}
+            onMouseLeave={() => {
+              if (cursorRef.current) {
+               gsap.to(cursorRef.current, { scale: 1, backgroundColor: 'white', borderColor: '#FFFFFF', duration: 0.3 });
+              }
+            }}
             target={link.external ? '_blank' : '_self'}
             rel={link.external ? 'noopener noreferrer' : undefined}
-            className="px-4 py-2 text-[#232526] dark:text-white hover:text-[#FF8660] dark:hover:text-[#FF8660] transition font-semibold"
+            className="px-4 py-2 cursor-none text-[#232526] dark:text-white hover:text-[#FF8660] dark:hover:text-[#FF8660] transition font-semibold"
             data-testid={`Nav_Link_${link.label}`}
           >
             {link.icon && <span className="mr-2">{link.icon}</span>}

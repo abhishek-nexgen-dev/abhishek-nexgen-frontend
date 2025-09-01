@@ -42,8 +42,9 @@ const Notes_Card: React.FC<NotesCardProps> = ({ Data }) => {
               target="_blank"
               rel="noopener noreferrer"
               download
+              
             >
-              Download PDF
+              View Notes
             </a>
           </Button>
         </CardAction>

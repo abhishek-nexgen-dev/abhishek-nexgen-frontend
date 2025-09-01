@@ -25,12 +25,11 @@ const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <div>
-      <Nav />
+    <div className='cursor-none overflow-hidden' onMouseMove={handleMouseMove}>
       <Cursor />
+      <Nav />
       <div
-        className="bg-white dark:bg-[#161513] w-screen flex cursor-none"
-        onMouseMove={handleMouseMove} // 👈 Handle movement here
+        className="bg-white dark:bg-[#161513] w-screen flex "
       >
         <main className="flex-1 flex items-center justify-center">
           {children}
