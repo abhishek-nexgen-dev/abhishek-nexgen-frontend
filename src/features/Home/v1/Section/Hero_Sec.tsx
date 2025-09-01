@@ -7,31 +7,24 @@ import { HERO_SECTION_CONSTANT } from '../constant/Hero_Sec.constant';
 import { gsap } from 'gsap/gsap-core';
 import { useCursor } from '@/context/CursorContext';
 
-
-
-
 const Hero_Sec = () => {
-  
   let { cursorRef } = useCursor();
 
-
-  let Handle_Paragraph_Mouse_Enter = (event: React.MouseEvent<HTMLParagraphElement>) => {
+  let Handle_Paragraph_Mouse_Enter = (
+    event: React.MouseEvent<HTMLParagraphElement>
+  ) => {
     if (cursorRef && cursorRef.current) {
-
-      gsap.to(cursorRef.current, { scale: 2, ease: 'power2.out' });  
-    
+      gsap.to(cursorRef.current, { scale: 2, ease: 'power2.out' });
     }
-  }
+  };
 
-
-
-  let Handle_Paragraph_Mouse_Leave = (event: React.MouseEvent<HTMLParagraphElement>) => {
+  let Handle_Paragraph_Mouse_Leave = (
+    event: React.MouseEvent<HTMLParagraphElement>
+  ) => {
     if (cursorRef && cursorRef.current) {
-     gsap.to(cursorRef.current, { scale: 1, ease: 'power2.out' });
-    
+      gsap.to(cursorRef.current, { scale: 1, ease: 'power2.out' });
     }
-  }
-
+  };
 
   return (
     <div className="flex items-center flex-col py-[8vh] w-full">
@@ -54,7 +47,11 @@ const Hero_Sec = () => {
           </span>
         </h2>
       </div>
-      <p onMouseEnter={Handle_Paragraph_Mouse_Enter} onMouseLeave={Handle_Paragraph_Mouse_Leave} className="text-[#64748B] dark:text-[#C5C5C5] text-[2.5vw] min-[1000px]:text-[1vw] font-[var(--font-plus-jakarta-sans)] text-center w-[85%] min-[1000px]:w-[40%] mt-[2vh]">
+      <p
+        onMouseEnter={Handle_Paragraph_Mouse_Enter}
+        onMouseLeave={Handle_Paragraph_Mouse_Leave}
+        className="text-[#64748B] dark:text-[#C5C5C5] text-[2.5vw] min-[1000px]:text-[1vw] font-[var(--font-plus-jakarta-sans)] text-center w-[85%] min-[1000px]:w-[40%] mt-[2vh]"
+      >
         {HERO_SECTION_CONSTANT.description}
       </p>
       <div className="Button_Container flex gap-2 mt-4 font-semibold">

@@ -26,8 +26,7 @@ const getItemsPerSlide = (width: number) => {
 };
 
 const Project_Category_Sec = () => {
-
-  let  { cursorRef } = useCursor();
+  let { cursorRef } = useCursor();
   const categories = PROJECT_CATEGORY_CONSTANT.Project_Category_Array;
   const [itemsPerSlide, setItemsPerSlide] = useState(
     getItemsPerSlide(typeof window !== 'undefined' ? window.innerWidth : 1200)
@@ -58,15 +57,26 @@ const Project_Category_Sec = () => {
         <Carousel className="w-full max-w-[1200px] px-2 overflow-hidden">
           <CarouselContent>
             {slides.map((slide, idx) => (
-              <CarouselItem key={idx} className="flex gap-6 justify-center " onMouseEnter={()=> {
-                if(cursorRef && cursorRef.current){
-                  gsap.to(cursorRef.current, { scale: 2, ease: 'power2.out' });  
-                }
-              }} onMouseLeave={()=>{
-                if(cursorRef && cursorRef.current){
-                gsap.to(cursorRef.current, { scale: 1, ease: 'power2.out' });
-                }
-              }}>
+              <CarouselItem
+                key={idx}
+                className="flex gap-6 justify-center "
+                onMouseEnter={() => {
+                  if (cursorRef && cursorRef.current) {
+                    gsap.to(cursorRef.current, {
+                      scale: 2,
+                      ease: 'power2.out',
+                    });
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (cursorRef && cursorRef.current) {
+                    gsap.to(cursorRef.current, {
+                      scale: 1,
+                      ease: 'power2.out',
+                    });
+                  }
+                }}
+              >
                 {slide.map((cat: Project_Category_Obj) => (
                   <Link
                     key={cat._id}
