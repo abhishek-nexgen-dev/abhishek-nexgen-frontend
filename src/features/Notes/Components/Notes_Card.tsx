@@ -43,7 +43,7 @@ const Notes_Card: React.FC<NotesCardProps> = ({ Data }) => {
               rel="noopener noreferrer"
               download
             >
-              Download PDF
+              View Notes
             </a>
           </Button>
         </CardAction>
