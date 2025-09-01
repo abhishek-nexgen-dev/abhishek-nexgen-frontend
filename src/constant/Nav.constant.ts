@@ -19,4 +19,10 @@ export const NAV_LINKS: Link_Type[] = [
     icon: undefined,
     external: true,
   },
+  {
+    label: 'Notes',
+    href: '/notes',
+    icon: undefined,
+    external: false,
+  },
 ];
