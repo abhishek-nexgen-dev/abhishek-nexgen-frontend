@@ -1,23 +1,49 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import Footer from '@/components/ui/Footer';
 import Nav from '@/components/ui/Nav';
-import { SidebarProvider } from '@/components/ui/sidebar';
-import User_SideBar from '@/components/user/User_SideBar';
+import { CursorProvider, useCursor } from '@/context/CursorContext';
+import Cursor from '@/features/cursor/Component/Cursor';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  const Circle_Ref = useRef<HTMLDivElement>(null);
+// 👇 Inner layout to move cursor inside the provider
+const InnerLayout = ({ children }: { children: React.ReactNode }) => {
+  const { cursorRef } = useCursor();
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (cursorRef.current) {
+      const offsetX = cursorRef.current.offsetWidth / 2;
+      const offsetY = cursorRef.current.offsetHeight / 2;
+      cursorRef.current.style.left = `${e.clientX - offsetX}px`;
+      cursorRef.current.style.top = `${e.clientY - offsetY}px`;
+    }
+  };
+
+  return (
+    <>
+      <Nav />
+      <Cursor />
+      <div
+        className="bg-white dark:bg-[#161513] w-screen flex relative cursor-none"
+        onMouseMove={handleMouseMove} // 👈 Handle movement here
+      >
+        <main className="flex-1 flex items-center justify-center">
+          {children}
+        </main>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
+    const lenis = new Lenis({ autoRaf: true });
 
     function raf(time: number) {
       lenis.raf(time);
@@ -48,34 +74,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     ScrollTrigger.refresh();
 
     return () => {
-      lenis.destroy && lenis.destroy();
-      // ScrollTrigger.kill();
+      lenis.destroy();
     };
   }, []);
 
-  const Handle_Cursor_Move = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (Circle_Ref.current) {
-      Circle_Ref.current.style.left = `${e.clientX - Circle_Ref.current.offsetWidth / 2}px`;
-      Circle_Ref.current.style.top = `${e.clientY - Circle_Ref.current.offsetHeight / 2}px`;
-    }
-  };
-
   return (
-    <SidebarProvider className="flex flex-col">
-      <Nav />
-      <div
-        className="bg-white dark:bg-[#161513] w-screen flex relative cursor-none"
-        onMouseMove={Handle_Cursor_Move}
-      >
-        <div
-          className="Cursor bg-white dark:bg-[#ffffff] rounded-full h-[2vh] w-[1vw] fixed z-50 pointer-events-none mix-blend-difference"
-          ref={Circle_Ref}
-        ></div>
-        <main className="flex-1 flex items-center justify-center">
-          {children}
-        </main>
-      </div>
-      <Footer />
-    </SidebarProvider>
+    <CursorProvider>
+      <InnerLayout>{children}</InnerLayout>
+    </CursorProvider>
   );
 }

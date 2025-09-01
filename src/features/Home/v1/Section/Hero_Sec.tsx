@@ -5,7 +5,13 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { HERO_SECTION_CONSTANT } from '../constant/Hero_Sec.constant';
 
+
+
 const Hero_Sec = () => {
+ 
+  
+
+
   return (
     <div className="flex items-center flex-col py-[8vh] w-full">
       <Image
