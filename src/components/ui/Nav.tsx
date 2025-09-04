@@ -36,7 +36,7 @@ const Nav = () => {
         </div>
       </div>
       <div
-        className="Nav_Link text-[1vw] font-[var(--font-plus-jakarta-sans)]"
+        className="Nav_Link text-[1vw]   font-[var(--font-plus-jakarta-sans)]"
         data-testid="Nav_Link"
       >
         {NAV_LINKS.map((link) => (

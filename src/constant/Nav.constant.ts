@@ -13,15 +13,21 @@ export const NAV_LINKS: Link_Type[] = [
     icon: undefined,
     external: false,
   },
-  {
-    label: 'Docs',
-    href: 'https://docs.example.com',
-    icon: undefined,
-    external: true,
-  },
+  // {
+  //   label: 'Docs',
+  //   href: 'https://docs.example.com',
+  //   icon: undefined,
+  //   external: true,
+  // },
   {
     label: 'Notes',
     href: '/notes',
+    icon: undefined,
+    external: false,
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
     icon: undefined,
     external: false,
   },
