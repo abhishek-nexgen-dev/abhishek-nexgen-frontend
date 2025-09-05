@@ -26,10 +26,10 @@ const Notes_Card: React.FC<NotesCardProps> = ({ Data }) => {
         />
       </CardHeader>
       <CardFooter className="h-[50%] w-full flex flex-col items-center  gap-2 px-4">
-        <CardTitle className=" dark:text-white text-[1.5vw] font-extrabold text-[#C8D7C7] uppercase">
+        <CardTitle className=" dark:text-white text-[1.3rem]  lg:text-[1.5vw] font-extrabold text-[#C8D7C7] uppercase">
           {Data.title}
         </CardTitle>
-        <CardDescription className="text-[#64748B] dark:text-[#C5C5C5] text-sm mb-2 capitalize">
+        <CardDescription className="text-[#64748B] dark:text-[#C5C5C5] text-[0.8rem]  mb-2 capitalize">
           Download Notes Here
         </CardDescription>
         <CardAction className="w-full flex justify-center">
@@ -37,12 +37,7 @@ const Notes_Card: React.FC<NotesCardProps> = ({ Data }) => {
             asChild
             className="bg-[#FF8660] hover:bg-[#D5491D] text-white font-semibold rounded-full px-6 py-2 transition"
           >
-            <a
-              href={Data.download_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-            >
+            <a href={Data.download_link} download>
               View Notes
             </a>
           </Button>

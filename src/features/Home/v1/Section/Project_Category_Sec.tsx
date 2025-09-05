@@ -81,7 +81,7 @@ const Project_Category_Sec = () => {
                   <Link
                     key={cat._id}
                     href={`project/${cat.Category_Name.toLowerCase().replaceAll('/', '-')}`}
-                    className="rounded-xl w-[90vw] md:w-[60vw] lg:w-[28vw] h-[32vh] md:h-[40vh] flex flex-col overflow-hidden 
+                    className="rounded-xl w-[90vw] md:w-[60vw] lg:w-[28vw]   flex flex-col overflow-hidden 
                                border border-gray-200 dark:border-none 
                                bg-gray-50 dark:bg-gradient-to-br dark:from-[#232526] dark:to-[#2A2A2A] 
                                shadow-sm dark:shadow-lg 
@@ -95,7 +95,7 @@ const Project_Category_Sec = () => {
                             : '/default-image.png'
                         }
                         alt={cat.Category_Name}
-                        className="h-full w-full object-cover"
+                        className="h-[30vh] w-full object-cover"
                       />
                     </div>
                     <div className="h-[30%] w-full flex justify-between items-center px-[2vw] py-[2vh] bg-gray-50 dark:bg-transparent">

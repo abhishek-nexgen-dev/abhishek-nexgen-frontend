@@ -10,11 +10,11 @@ const Expression_With_Sec = () => {
       <h1 className="text-gray-600 dark:text-[#C5C5C5] text-4xl font-extrabold text-center mb-12 tracking-wide drop-shadow-lg">
         EXPERIENCE WITH
       </h1>
-      <div className="flex flex-wrap justify-center items-center gap-2 md:gap-8 w-full">
+      <div className="flex flex-wrap justify-center items-center gap-3 md:gap-8 w-full">
         {EXPRESSION_WITH_CONSTANT.map((item: ExpLogo, index) => (
           <div
             key={index}
-            className="flex flex-col items-center space-y-3 w-[25%] lg:w-fit "
+            className="flex flex-col items-center space-y-3  mt-[2vh] md:mt-0 w-[20%]  lg:w-fit "
           >
             <a
               href={item.url ? item.url : '#'}
