@@ -36,7 +36,7 @@ const Hero_Sec = () => {
         className="rounded-full mt-[7vh] w-[35%] lg:w-[13%] object-cover border-4 border-[#E2E8F0] dark:border-white"
         priority
       />
-      <div className="font-bold flex flex-col items-center justify-center text-[5.1vw] min-[1000px]:text-[3vw]">
+      <div className="font-bold flex flex-col items-center justify-center text-[2.5rem] min-[1000px]:text-[3vw]">
         <h1 className="text-[#1E293B] dark:text-white font-[var(--font-plus-jakarta-sans)] mt-[3vh]">
           {HERO_SECTION_CONSTANT.heading}
         </h1>
@@ -54,12 +54,12 @@ const Hero_Sec = () => {
       >
         {HERO_SECTION_CONSTANT.description}
       </p>
-      <div className="Button_Container flex gap-2 mt-4 font-semibold">
+      <div className="Button_Container flex gap-2 mt-4 font-semibold ">
         {HERO_SECTION_CONSTANT.links?.map((button, index) => (
           <Button
             key={index}
             variant={'outline'}
-            className={`mt-[2vh] text-[1.2vw] mx-[1vw] rounded-full px-[2.5vw] py-[2.8vh] font-[var(--font-plus-jakarta-sans)]
+            className={`mt-[2vh] text-[2.8vw] md:text-[1.2vw] mx-[1vw] rounded-full px-[2.5vw] py-[2.8vh] font-[var(--font-plus-jakarta-sans)]
               transition ${button.className}`}
           >
             {button.label}

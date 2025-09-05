@@ -8,6 +8,8 @@ import {
   SiExpress,
 } from 'react-icons/si';
 
+import { TbBrandSocketIo } from 'react-icons/tb';
+
 export const EXPRESSION_WITH_CONSTANT: ExpLogo[] = [
   {
     name: 'React',
@@ -43,5 +45,10 @@ export const EXPRESSION_WITH_CONSTANT: ExpLogo[] = [
     name: 'Node.js',
     icon: <FaNodeJs />,
     url: 'https://nodejs.org',
+  },
+  {
+    name: 'Socket.io',
+    icon: <TbBrandSocketIo />,
+    url: 'https://socket.io',
   },
 ];

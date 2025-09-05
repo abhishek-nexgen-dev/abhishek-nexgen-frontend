@@ -19,7 +19,7 @@ const Cursor = () => {
     //   onMouseMove={handleMouseMove}
     // >
     <div
-      className="Cursor bg-white dark:bg-[#ffffff] fixed rounded-full h-[1vw] w-[1vw] mix-blend-difference pointer-events-none z-[999999]"
+      className="Cursor bg-white dark:bg-[#ffffff] hidden md:block md:fixed rounded-full h-[1vw] w-[1vw] mix-blend-difference pointer-events-none z-[999999]"
       ref={cursorRef}
     />
     // </div>
