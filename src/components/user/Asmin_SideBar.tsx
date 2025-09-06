@@ -12,7 +12,13 @@ const Admin_SideBar = () => {
   return (
     <Sidebar className="fixed left-0 z-50 h-screen">
       <SidebarHeader>
-            <Image src="/Images/Abhishek_RedShirt.webp" width={0} height={0} alt="Admin Image" className="object-contain  w-[80%]  h-[40%]"/>
+        <Image
+          src="/Images/Abhishek_RedShirt.webp"
+          width={0}
+          height={0}
+          alt="Admin Image"
+          className="object-contain  w-[80%]  h-[40%]"
+        />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup />

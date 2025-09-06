@@ -19,7 +19,8 @@ const AuthComponent = () => {
           Admin Login
         </CardTitle>
         <p className="text-base md:text-lg text-[#C5C5C5]">
-          Please enter your registered admin email and the 6-digit OTP sent to your inbox to securely access the dashboard.
+          Please enter your registered admin email and the 6-digit OTP sent to
+          your inbox to securely access the dashboard.
         </p>
       </div>
       {/* Email Field */}
@@ -34,21 +35,30 @@ const AuthComponent = () => {
       {/* OTP Field */}
       <div className="flex flex-col space-y-2 gap-2">
         <Label className="text-lg md:text-xl font-medium mb-2">OTP</Label>
-        <InputOTP maxLength={6} className="Otp_Container w-full flex justify-center gap-2">
+        <InputOTP
+          maxLength={6}
+          className="Otp_Container w-full flex justify-center gap-2"
+        >
           <InputOTPGroup className="flex gap-2">
-            <InputOTPSlot index={0} className='w-[3.8rem]' />
-            <InputOTPSlot index={1} className='w-[3.8rem]' />
-            <InputOTPSlot index={2} className='w-[3.8rem]' />
+            <InputOTPSlot index={0} className="w-[3.8rem]" />
+            <InputOTPSlot index={1} className="w-[3.8rem]" />
+            <InputOTPSlot index={2} className="w-[3.8rem]" />
           </InputOTPGroup>
           <InputOTPSeparator />
           <InputOTPGroup className="flex gap-2">
-            <InputOTPSlot index={3} className='w-[3.8rem]' />
-            <InputOTPSlot index={4} className='w-[3.8rem]' />
-            <InputOTPSlot index={5} className='w-[3.8rem]' />
+            <InputOTPSlot index={3} className="w-[3.8rem]" />
+            <InputOTPSlot index={4} className="w-[3.8rem]" />
+            <InputOTPSlot index={5} className="w-[3.8rem]" />
           </InputOTPGroup>
         </InputOTP>
         <span className="text-sm text-[#FF8660] mt-2 text-right">
-          Didn't receive OTP? <button type="button" className="underline hover:text-white transition">Resend</button>
+          Didn't receive OTP?{' '}
+          <button
+            type="button"
+            className="underline hover:text-white transition"
+          >
+            Resend
+          </button>
         </span>
       </div>
       {/* Submit Button */}
