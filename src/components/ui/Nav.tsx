@@ -41,7 +41,7 @@ const Nav = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="h-[10vh] w-screen bg-[#f1e9e9] dark:bg-[#222222] flex items-center justify-between px-4 md:px-10 shadow-sm dark:shadow-none border-b border-[#e5e7eb] dark:border-[#232526] fixed top-0 left-0 z-[1000]">
+    <nav className="h-[10vh] w-screen bg-[#f1e9e9] dark:bg-[#222222] flex items-center justify-between px-4 md:px-10 shadow-sm dark:shadow-none border-b border-[#e5e7eb] dark:border-[#232526] fixed md:relative top-0 left-0 z-[1000]">
       {/* Logo */}
       <div className="Nav_Logo w-fit flex items-center" data-testid="Nav_Logo">
         <div className="rounded-full bg-[#F3F3F3] dark:bg-[#222222] md:p-2 flex items-center justify-center md:shadow-md h-fit">
@@ -143,11 +143,13 @@ const Nav = () => {
             {link.label}
           </Link>
         ))}
+
         <Button
-          variant="default"
-          className="font-semibold px-6 py-2 rounded-full bg-[#FF8660] text-white hover:bg-[#D5491D] transition mt-6 w-[90%]"
+          variant="link"
+          asChild
+          className="font-semibold px-6 py-2 rounded-full bg-[#FF8660] text-white hover:bg-[#D5491D] transition mt-6 w-[90%] cursor-none"
         >
-          Login
+          <Link href="/login">Login</Link>
         </Button>
       </div>
     </nav>

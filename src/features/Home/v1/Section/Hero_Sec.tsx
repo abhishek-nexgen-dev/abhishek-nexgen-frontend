@@ -36,7 +36,7 @@ const Hero_Sec = () => {
         className="rounded-full mt-[7vh] w-[35%] lg:w-[13%] object-cover border-4 border-[#E2E8F0] dark:border-white"
         priority
       />
-      <div className="font-bold flex flex-col items-center justify-center text-[2.5rem] min-[1000px]:text-[3vw]">
+      <div className="font-bold flex flex-col items-center justify-center text-[7vw] min-[1000px]:text-[3vw]">
         <h1 className="text-[#1E293B] dark:text-white font-[var(--font-plus-jakarta-sans)] mt-[3vh]">
           {HERO_SECTION_CONSTANT.heading}
         </h1>
@@ -50,7 +50,7 @@ const Hero_Sec = () => {
       <p
         onMouseEnter={Handle_Paragraph_Mouse_Enter}
         onMouseLeave={Handle_Paragraph_Mouse_Leave}
-        className="text-[#64748B] dark:text-[#C5C5C5] text-[2.5vw] min-[1000px]:text-[1vw] font-[var(--font-plus-jakarta-sans)] text-center w-[85%] min-[1000px]:w-[40%] mt-[2vh]"
+        className="text-[#64748B] dark:text-[#C5C5C5] text-[0.8rem] min-[1000px]:text-[1vw] font-[var(--font-plus-jakarta-sans)] text-center w-[85%] min-[1000px]:w-[40%] mt-[2vh]"
       >
         {HERO_SECTION_CONSTANT.description}
       </p>
@@ -59,7 +59,7 @@ const Hero_Sec = () => {
           <Button
             key={index}
             variant={'outline'}
-            className={`mt-[2vh] text-[2.8vw] md:text-[1.2vw] mx-[1vw] rounded-full px-[2.5vw] py-[2.8vh] font-[var(--font-plus-jakarta-sans)]
+            className={`mt-[2vh] text-[1.2rem] md:text-[1.2vw] mx-[1vw] rounded-full px-[2.8vw] py-[2.8vh] font-[var(--font-plus-jakarta-sans)]
               transition ${button.className}`}
           >
             {button.label}
