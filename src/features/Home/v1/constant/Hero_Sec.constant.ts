@@ -5,10 +5,7 @@ export const HERO_SECTION_CONSTANT: HeroSection_Type = {
   heading: 'I do code and',
   subheading: 'make content',
   Hilted_text: 'about it!',
-  description: `I am a seasoned full-stack software engineer with over 
-8 years of professional experience, specializing in backend development. 
-My expertise lies in crafting robust and scalable SaaS-based 
-architectures on the Amazon AWS platform.`,
+  description: `I’m a BCA student at CIITM Dhanbad and an aspiring Software Engineer. I learn through online platforms and build real-world projects using the MERN stack. I also practice Data Structures and Algorithms in JavaScript to improve my problem-solving skills.`,
   links: [
     {
       label: 'Get In Touch',

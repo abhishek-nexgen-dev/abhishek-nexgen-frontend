@@ -73,7 +73,7 @@ const CallBack = () => {
               type="text"
               placeholder="Name"
               required
-              className="bg-white dark:bg-[#232526] text-gray-900 dark:text-white border border-gray-300 dark:border-[#333] placeholder:text-gray-400"
+              className="bg-white dark:bg-[#232526] text-gray-900 dark:text-white border border-gray-300 dark:border-[#333] placeholder:text-gray-400 w-auto"
             />
           </div>
 
@@ -90,7 +90,7 @@ const CallBack = () => {
               type="tel"
               placeholder="Phone Number"
               required
-              className="bg-white dark:bg-[#232526] text-gray-900 dark:text-white border border-gray-300 dark:border-[#333] placeholder:text-gray-400"
+              className="bg-white dark:bg-[#232526] text-gray-900 dark:text-white border border-gray-300 dark:border-[#333] placeholder:text-gray-400 w-auto"
             />
           </div>
 
@@ -117,7 +117,7 @@ const CallBack = () => {
                   <CalendarIcon className="ml-2 h-5 w-5 text-[#FF8660]" />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-white dark:bg-[#232526] border border-gray-300 dark:border-[#333]">
+              <PopoverContent className="p-0 bg-white dark:bg-[#232526] border border-gray-300 dark:border-[#333] w-auto">
                 <Calendar
                   mode="single"
                   selected={date}

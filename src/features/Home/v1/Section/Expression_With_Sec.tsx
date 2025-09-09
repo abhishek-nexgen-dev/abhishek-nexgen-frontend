@@ -7,7 +7,7 @@ import { ExpLogo } from '../type/Exp_Sec.type';
 const Expression_With_Sec = () => {
   return (
     <div className="w-screen py-16 bg-gradient-to-br ">
-      <h1 className="text-gray-600 dark:text-[#C5C5C5] text-4xl font-extrabold text-center mb-12 tracking-wide drop-shadow-lg">
+      <h1 className="text-gray-600 dark:text-[#C5C5C5] text-[1.8rem] lg:text-[1.9vw] font-extrabold text-center mb-12 tracking-wide drop-shadow-lg">
         EXPERIENCE WITH
       </h1>
       <div className="flex flex-wrap justify-center items-center gap-3 md:gap-8 w-full">
