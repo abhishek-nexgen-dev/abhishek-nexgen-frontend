@@ -19,22 +19,22 @@ import { Contact_Country } from '../Constant/Contact.constant';
 const Contact_Form = () => {
   return (
     <form
-      className="Contact_Form w-full  mx-auto bg-gradient-to-br from-[#232526] via-[#1E1E1E] to-[#232526] rounded-2xl p-8 md:p-10 text-white shadow-2xl space-y-8"
+      className="Contact_Form w-full  mx-auto bg-gradient-to-br from-[#232526] via-[#1E1E1E] to-[#232526] rounded-2xl p-8 md:p-10 text-white shadow-2xl space-y-8 border-[1px] border-[#444]"
       onSubmit={(e) => {
         e.preventDefault();
         alert('Thank you for reaching out! I will get back to you soon.');
       }}
     >
       {/* Heading & Paragraph */}
-      <div className="mb-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#FF8660] mb-2 font-[var(--font-plus-jakarta-sans)]">
+      {/* <div className="mb-4 text-center"> */}
+      {/* <h2 className="text-3xl md:text-4xl font-extrabold text-[#FF8660] mb-2 font-[var(--font-plus-jakarta-sans)]">
           Let's Connect!
         </h2>
         <p className="text-base md:text-lg text-[#C5C5C5]">
           Have a project idea, collaboration, or just want to say hello? Fill
           out the form below and I'll get back to you personally.
         </p>
-      </div>
+      </div> */}
 
       {/* Name Field */}
       <div className="flex flex-col space-y-2">

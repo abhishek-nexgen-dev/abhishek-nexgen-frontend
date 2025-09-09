@@ -1,3 +1,5 @@
+'use client';
+
 import { NAV_LINKS } from '@/constant/Nav.constant';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -9,12 +11,14 @@ import CallBack from '@/features/CallBack/CallBack';
 import { useCursor } from '@/context/CursorContext';
 import { TiThMenu } from 'react-icons/ti';
 import gsap from 'gsap';
+import { useRouter } from 'next/navigation';
 
 const Nav = () => {
   let { cursorRef } = useCursor();
   const [isDark, setIsDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const mobileNavRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -114,6 +118,9 @@ const Nav = () => {
           <TiThMenu size={30} />
         </button>
         <Button
+          onClick={() => {
+            router.push('/login');
+          }}
           variant="default"
           className="font-semibold px-6 py-2 rounded-full bg-[#FF8660] text-white hover:bg-[#D5491D] transition hidden md:block"
         >
@@ -145,11 +152,12 @@ const Nav = () => {
         ))}
 
         <Button
-          variant="link"
-          asChild
-          className="font-semibold px-6 py-2 rounded-full bg-[#FF8660] text-white hover:bg-[#D5491D] transition mt-6 w-[90%] cursor-none"
+          onClick={() => {
+            router.push('/login');
+          }}
+          className="!z-[9999] !relative font-semibold px-6 py-2 rounded-full bg-[#FF8660] text-white hover:bg-[#D5491D] transition mt-6 w-[90%] border-4 cursor-none border-green-500 "
         >
-          <Link href="/login">Login</Link>
+          Login
         </Button>
       </div>
     </nav>
