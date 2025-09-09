@@ -1,4 +1,4 @@
-import { Contact_Country_Type } from '../Type/Contact.type';
+import { Contact_Country_Type, Contact_Info_Type } from '../Type/Contact.type';
 
 export const Contact_Country: Contact_Country_Type[] = [
   {
@@ -72,3 +72,15 @@ export const Contact_Country: Contact_Country_Type[] = [
     Country_Flag_Image: 'https://flagcdn.com/us.svg',
   },
 ];
+
+export const CONTACT_INFO_CONSTANT: Contact_Info_Type = {
+  Email: 'abhishekk.nexgen.dev@gmail.com',
+  Phone: '+91 6202665965',
+  Social_Link: {
+    Instagram: 'https://instagram.com/abhishek_nexgen',
+    Twitter: 'https://twitter.com/abhishek_nexgen',
+    GitHub: 'https://github.com/abhishek-nexgen-dev',
+    LinkedIn: 'https://linkedin.com/in/abhishek-nexgen',
+    Youtube: 'https://youtube.com/@abhishek_nexgen',
+  },
+};
