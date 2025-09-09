@@ -30,7 +30,6 @@ const page = () => {
           </div>
         </div>
 
-
         <div className="mt-8 space-y-8 z-10 relative">
           {[
             {
@@ -63,7 +62,6 @@ const page = () => {
           ))}
         </div>
 
-    
         <div className="mt-auto pt-6 border-t border-gray-800 flex items-center justify-between text-gray-400 text-xs tracking-wide uppercase select-none z-10 relative">
           <span>Team Members Only</span>
           <div className="flex items-center gap-2">
