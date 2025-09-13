@@ -20,7 +20,6 @@ interface RequestOptions<T = any> {
   endpoint: string;
   data?: T;
   headers?: Record<string, string>;
- 
 }
 
 class useApi {
@@ -32,11 +31,10 @@ class useApi {
     this.debug = process.env.IS_PRODUCTION === 'true' ? false : true;
   }
 
-
   public async request<RequestData = any, ResponseData = any>(
     options: RequestOptions<RequestData>
   ): Promise<ResponseData> {
-    const { method, endpoint, data, headers = {}} = options;
+    const { method, endpoint, data, headers = {} } = options;
     const url = `${this.baseUrl}${endpoint}`;
 
     try {
@@ -48,7 +46,6 @@ class useApi {
         },
       };
 
-      
       if (method !== 'GET' && data) {
         const requestData = this.debug ? { ...data } : data;
         requestOptions.body = JSON.stringify(requestData);
@@ -88,4 +85,3 @@ class useApi {
 
 // Create and export a singleton instance
 export default new useApi();
-

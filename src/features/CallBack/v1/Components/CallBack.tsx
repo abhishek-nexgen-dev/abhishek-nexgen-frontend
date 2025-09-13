@@ -37,7 +37,6 @@ import { CallBack_Form_Validator } from '../Validator/CallBack.validator';
 import { CallBack_Form_Type } from '../Type/CallBack.type';
 import useCallBack_Api from '../hook/useCallBack_Api';
 
-
 // First, update the constants for the time options
 const hours = [
   'Hr',
@@ -78,14 +77,12 @@ const CallBack = () => {
       setIsSubmitting(true);
       console.log('Form submitted successfully:', data);
 
-  
-      
       let res = await useCallBack_Api.createNewCallback(data);
       console.log('API Response:', res);
 
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      toast.success(res.message,{
+      toast.success(res.message, {
         theme: 'dark',
         autoClose: 1000,
         draggableDirection: 'y',
@@ -99,7 +96,7 @@ const CallBack = () => {
       console.error('Error submitting form:-->', error.response, error.message);
       toast.error(error.message, {
         theme: 'dark',
-        
+
         autoClose: 1000,
         draggableDirection: 'y',
       });

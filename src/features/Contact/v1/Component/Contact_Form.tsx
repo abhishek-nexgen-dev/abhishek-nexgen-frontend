@@ -45,10 +45,8 @@ const Contact_Form = () => {
   const onSubmit: SubmitHandler<Contact_Form_Type> = async (data) => {
     setIsSubmitting(true);
     try {
-
-
       let res = await ContactApi.createContact(data);
-    
+
       toast.success(res.message);
       reset();
     } catch (error: any) {
