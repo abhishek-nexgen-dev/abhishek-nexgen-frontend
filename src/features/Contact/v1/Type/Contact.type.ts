@@ -15,3 +15,11 @@ export type Contact_Info_Type = {
     Youtube?: string;
   };
 };
+
+export type Contact_Form_Type = {
+  name: string;
+  email: string;
+  country_code: string;
+  phone: string;
+  message: string;
+};
