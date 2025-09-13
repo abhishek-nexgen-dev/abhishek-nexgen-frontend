@@ -295,12 +295,7 @@ const CallBack = () => {
 
               {/* AM/PM */}
               <div className="flex flex-col">
-                <Select
-    
-                  onValueChange={(value) =>
-                    setValue('Meridiem', value)
-                  }
-                >
+                <Select onValueChange={(value) => setValue('Meridiem', value)}>
                   <SelectTrigger
                     className={`w-[5rem] bg-white dark:bg-[#232526] text-gray-900 dark:text-white border ${
                       errors.Meridiem
