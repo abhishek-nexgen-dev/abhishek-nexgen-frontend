@@ -11,8 +11,8 @@ import { CONTACT_INFO_CONSTANT } from '@/features/Contact/v1/Constant/Contact.co
 
 const page = () => {
   return (
-    <div className="h-screen w-screen flex items-center justify-center min-[1070px]:justify-between">
-      <div className="Contact_Left h-full w-1/2 px-[2.8vw] max-[1070px]:hidden flex flex-col gap-[4vh]">
+    <div className="w-screen mt-[10vh] md:mt-0  flex items-center justify-center min-[1070px]:justify-between">
+      <div className="Contact_Left h-full w-1/2 px-[2.8vw] max-[1070px]:hidden flex items-start  flex-col gap-[4vh]">
         <h1 className="text-5xl font-bold text-[#FF8660] min-[1070px]:mt-[20vh]">
           Get In Touch
         </h1>
