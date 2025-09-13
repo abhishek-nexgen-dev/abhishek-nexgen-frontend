@@ -4,5 +4,5 @@ export type CallBack_Form_Type = {
   Date: Date | null;
   Hours: string;
   Minutes: string;
-  Meridiem: 'AM' | 'PM';
+  Meridiem: string;
 };

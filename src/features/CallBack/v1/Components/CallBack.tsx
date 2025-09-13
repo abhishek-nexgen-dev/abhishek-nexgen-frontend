@@ -296,8 +296,9 @@ const CallBack = () => {
               {/* AM/PM */}
               <div className="flex flex-col">
                 <Select
+    
                   onValueChange={(value) =>
-                    setValue('Meridiem', value as 'AM' | 'PM')
+                    setValue('Meridiem', value)
                   }
                 >
                   <SelectTrigger

@@ -31,8 +31,8 @@ const Hero_Sec = () => {
       <Image
         src={HERO_SECTION_CONSTANT.image}
         alt="Hero Image"
-        width={120}
-        height={120}
+        width={1000}
+        height={1000}
         className="rounded-full mt-[7vh] w-[35%] lg:w-[13%] object-cover border-4 border-[#E2E8F0] dark:border-white"
         priority
       />
