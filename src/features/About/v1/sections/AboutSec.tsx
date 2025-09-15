@@ -5,7 +5,7 @@ import React from 'react';
 const AboutSec = () => {
   return (
     <section className="w-full flex flex-col lg:flex-row overflow-hidden px-[2vw] pt-[2vh]">
-      <div className="w-full lg:w-[40%] flex flex-col justify-center items-center mt-[4rem] lg:mt-0 lg:items-start h-[50vh] lg:h-[90vh]">
+      <div className="w-full lg:w-[40%] flex flex-col justify-center items-center mt-[4rem]  lg:items-start h-[50vh] lg:h-[90vh]">
         <div
           className="relative w-[280px] h-[280px] lg:w-[80%] lg:h-[70%] rounded-full 
                       bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500
@@ -27,7 +27,7 @@ const AboutSec = () => {
 
       <div
         className="w-full lg:w-[60%] min-h-[50vh] lg:h-[90vh] 
-                    flex flex-col gap-8 md:gap-[2vh] px-4 lg:px-12"
+                    flex flex-col gap-8 md:gap-[2vh] px-4 lg:px-12 mt-[5rem] "
       >
         <div className="mt-8 lg:mt-[12vh]">
           <h2
@@ -40,7 +40,7 @@ const AboutSec = () => {
           </h2>
         </div>
 
-        <div className="space-y-6 text-[#C4C4C4] text-lg lg:text-[1.4rem] font-[var(--font-plus-jakarta-sans)] uppercase">
+        <div className="space-y-6 text-[#C4C4C4] text-lg lg:text-[1.4rem] px-[2.5vh] py-[2vw] font-[var(--font-plus-jakarta-sans)]">
           <p className="leading-relaxed">👋 Hey, I'm Abhishek Kumar</p>
 
           <p className="leading-relaxed">
