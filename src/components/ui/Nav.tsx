@@ -45,7 +45,7 @@ const Nav = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="h-[10vh] w-screen bg-[#f1e9e9] dark:bg-[#222222] flex items-center justify-between px-4 md:px-10 shadow-sm dark:shadow-none border-b border-[#e5e7eb] dark:border-[#232526] fixed md:relative top-0 left-0 z-[1000]">
+    <nav className="h-[10vh] w-[60vw] fixed bg-[#f1e9e9] dark:bg-[#222222]/50  backdrop-blur-xl flex items-center justify-between px-4 md:px-10 shadow-sm dark:shadow-none border-[1px] border-[#e5e7eb] dark:border-[#ffffff]/20  left-1/2 -translate-x-1/2 top-10  z-[1000] rounded-full">
       {/* Logo */}
       <div className="Nav_Logo w-fit flex items-center" data-testid="Nav_Logo">
         <div className="rounded-full bg-[#F3F3F3] dark:bg-[#222222] md:p-2 flex items-center justify-center md:shadow-md h-fit">

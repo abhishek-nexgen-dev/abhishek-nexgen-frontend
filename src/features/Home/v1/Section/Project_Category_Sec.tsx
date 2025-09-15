@@ -53,13 +53,13 @@ const Project_Category_Sec = () => {
         Projects Category
       </h2>
 
-      <div className="w-full flex items-center justify-center flex-wrap mt-[8vh]">
+      <div className="w-full flex items-center justify-center flex-wrap mt-[8vh] ">
         <Carousel className="w-full max-w-[1200px] px-2 overflow-hidden">
           <CarouselContent>
             {slides.map((slide, idx) => (
               <CarouselItem
                 key={idx}
-                className="flex gap-6 justify-center "
+                className="flex gap-x-10 justify-center py-4"
                 onMouseEnter={() => {
                   if (cursorRef && cursorRef.current) {
                     gsap.to(cursorRef.current, {
@@ -83,9 +83,9 @@ const Project_Category_Sec = () => {
                     href={`project/${cat.Category_Name.toLowerCase().replaceAll('/', '-')}`}
                     className="rounded-xl w-[90vw] md:w-[60vw] lg:w-[28vw]   flex flex-col overflow-hidden 
                                border border-gray-200 dark:border-none 
-                               bg-gray-50 dark:bg-gradient-to-br dark:from-[#232526] dark:to-[#2A2A2A] 
+                               bg-gray-50 dark:bg-gradient-to-br dark:from-[#232526] dark:to-[#191919] 
                                shadow-sm dark:shadow-lg 
-                               transition-transform hover:scale-105 cursor-none"
+                               transition-transform hover:-translate-y-2 duration-200 cursor-none"
                   >
                     <div className="Category_Image h-[70%] w-full">
                       <img
@@ -99,11 +99,11 @@ const Project_Category_Sec = () => {
                       />
                     </div>
                     <div className="h-[30%] w-full flex justify-between items-center px-[2vw] py-[2vh] bg-gray-50 dark:bg-transparent">
-                      <div>
-                        <h4 className="text-sm text-gray-600 dark:text-gray-300">
+                      <div className="flex flex-col gap-y-4 py-2">
+                        <h4 className="text-base text-gray-600 dark:text-gray-300 ">
                           CLICK HERE TO VISIT
                         </h4>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mt-1">
+                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mt-1">
                           {cat.Category_Name}
                         </h3>
                       </div>

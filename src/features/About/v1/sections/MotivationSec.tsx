@@ -21,7 +21,7 @@ const MotivationSec = () => {
           className="w-full lg:w-[60%] min-h-[50vh] lg:min-h-0 
                     flex flex-col px-4 lg:px-12 lg:pr-20 z-10"
         >
-          <div className="space-y-6 text-[#C4C4C4] text-lg lg:text-[1.4rem] font-[var(--font-plus-jakarta-sans)] uppercase">
+          <div className="space-y-6 text-[#C4C4C4] text-lg lg:text-[1.4rem] font-[var(--font-plus-jakarta-sans)] ">
             <p className="leading-relaxed">
               Many people become developers, but an engineer is someone who
               thinks deeply, plans ahead, and foresees challenges before they
