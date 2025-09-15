@@ -38,14 +38,12 @@ const Hero_Sec = () => {
         rayLength={1.9}
         followMouse={true}
         mouseInfluence={0.2}
-        noiseAmount={0.10}
+        noiseAmount={0.1}
         distortion={0.08}
         className="relative inset-0 z-0 h-screen w-screen"
       />
 
-
       <div className="absolute z-10 flex flex-col items-center text-center">
-    
         <Image
           src={HERO_SECTION_CONSTANT.image}
           alt="Hero Image"
@@ -54,7 +52,6 @@ const Hero_Sec = () => {
           className="rounded-full mt-[7vh] w-[35%] lg:w-[13%] object-cover border-4 border-[#E2E8F0] dark:border-[#FF8660]"
           priority
         />
-
 
         <div className="font-bold flex flex-col items-center justify-center text-[7vw] min-[1000px]:text-[3vw]">
           <h1 className="text-[#FF8660] font-[var(--font-plus-jakarta-sans)] mt-[1vh]">
@@ -68,7 +65,6 @@ const Hero_Sec = () => {
           </h2>
         </div>
 
-       
         <p
           onMouseEnter={Handle_Paragraph_Mouse_Enter}
           onMouseLeave={Handle_Paragraph_Mouse_Leave}
@@ -76,7 +72,6 @@ const Hero_Sec = () => {
         >
           {HERO_SECTION_CONSTANT.description}
         </p>
-
 
         <div className="Button_Container flex gap-2 mt-4 font-semibold ">
           {HERO_SECTION_CONSTANT.links?.map((button, index) => (
