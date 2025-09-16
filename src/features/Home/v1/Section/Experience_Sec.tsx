@@ -1,9 +1,7 @@
 import React from 'react';
 import Experience_Card from '../components/Experience_Card';
 
-
 const Experience_Sec: React.FC = () => {
-
   return (
     <section className="Experience_Sec w-screen py-[12vh] flex flex-col items-center">
       <h2

@@ -9,9 +9,6 @@ import { useCursor } from '@/context/CursorContext';
 import LightRays from '@/components/LightRays'; // Assuming LightRays is a custom component
 
 const Hero_Sec = () => {
-
-
-
   let { cursorRef } = useCursor();
 
   const Handle_Paragraph_Mouse_Enter = (
