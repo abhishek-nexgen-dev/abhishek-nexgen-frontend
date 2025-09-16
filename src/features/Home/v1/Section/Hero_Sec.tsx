@@ -43,7 +43,7 @@ const Hero_Sec = () => {
         className="relative inset-0 z-0 h-screen w-screen"
       />
 
-      <div className="absolute z-10 flex flex-col items-center text-center">
+      <div className="a absolute z-10 flex flex-col items-center text-center">
         <Image
           src={HERO_SECTION_CONSTANT.image}
           alt="Hero Image"
