@@ -1,23 +1,56 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const AboutSec = () => {
+
+  useGSAP(() => {
+    
+    gsap.to('.Image_Container', {
+      opacity: 1,
+      duration: window.innerWidth < 1024 ? 1 : 1.5,
+      y: window.innerWidth < 1024 ? -20 : 0,
+      x: window.innerWidth < 1024 ? 0 : 80,
+    });
+
+
+
+
+
+
+    gsap.to('.Text_Container', {
+      y: window.innerWidth < 1024 ? -120 : -80,
+      duration: 1.5,
+      opacity: 1,
+    });
+
+
+
+  }, []);
+
+
+
   return (
     <section className="w-full flex flex-col lg:flex-row overflow-hidden px-[2vw] pt-[2vh]">
       <div className="w-full lg:w-[40%] flex flex-col justify-center items-center mt-[4rem]  lg:items-start h-[50vh] lg:h-[90vh]">
         <div
-          className="relative w-[280px] h-[280px] lg:w-[80%] lg:h-[70%] rounded-full 
+          className="Image_Container  opacity-0 left-0 relative w-[280px] h-[280px] lg:w-[80%] lg:h-[70%] rounded-full 
                       bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500
                       border border-[#FF8660]/50 
                       overflow-visible"
         >
-          <div className="w-full h-full relative">
+          <div className=" w-full h-full relative">
             <Image
               src="/Images/About_Right_Image.png"
               priority
               alt="Abhishek Kumar - Software Engineer"
-              className="absolute top-[35%] scale-125 object-contain"
+              className="absolute top-[40%] scale-125 object-contain"
               width={1000}
               height={1000}
             />
@@ -26,10 +59,10 @@ const AboutSec = () => {
       </div>
 
       <div
-        className="w-full lg:w-[60%] min-h-[50vh] lg:h-[90vh] 
-                    flex flex-col gap-8 md:gap-[2vh] px-4 lg:px-12 mt-[5rem] "
+        className="Text_Container w-full lg:w-[60%] min-h-[50vh] lg:h-[90vh] 
+                    flex flex-col gap-8 md:gap-[2vh] px-4 lg:px-12 mt-[12rem] opacity-0"
       >
-        <div className="mt-8 lg:mt-[12vh]">
+        <div className="mt-8 hidden md:block lg:mt-[12vh]">
           <h2
             className="text-[1.7rem] lg:text-[1.8vw] font-bold text-center mb-6 
                 bg-gradient-to-r from-gray-900 to-gray-700 

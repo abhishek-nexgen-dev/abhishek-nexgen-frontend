@@ -12,7 +12,7 @@ import React from 'react';
 
 const AuthComponent = () => {
   return (
-    <form className="Auth_Component w-full  mx-auto bg-gradient-to-br from-[#232526] via-[#1E1E1E] to-[#232526] rounded-2xl text-white shadow-2xl overflow-hidden">
+    <form className="Auth_Component w-full mt-28 mx-auto bg-gradient-to-br from-[#232526] via-[#1E1E1E] to-[#232526] rounded-2xl text-white shadow-2xl overflow-hidden">
       {/* Image Header */}
       <CardHeader className="p-0">
         <div className="relative">

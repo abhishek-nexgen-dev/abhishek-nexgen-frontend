@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Achievement = () => {
-  return <div>Achievement</div>;
+  return <div className='h-screen'>Achievement</div>;
 };
 
 export default Achievement;

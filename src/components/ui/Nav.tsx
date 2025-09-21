@@ -45,7 +45,7 @@ const Nav = () => {
   }, [menuOpen]);
 
   return (
-    <nav className="h-[10vh] w-[60vw] fixed bg-[#f1e9e9] dark:bg-[#222222]/50  backdrop-blur-xl flex items-center justify-between px-4 md:px-10 shadow-sm dark:shadow-none border-[1px] border-[#e5e7eb] dark:border-[#ffffff]/20  left-1/2 -translate-x-1/2 top-10  z-[1000] rounded-full">
+    <nav className="py-[0.5vh] px-[0.2vw] w-full lg:w-[60%] fixed bg-[#f1e9e9] dark:bg-[#222222]/50  backdrop-blur-xl flex items-center justify-between  md:px-10 shadow-sm dark:shadow-none border-[1px] border-[#e5e7eb] dark:border-[#ffffff]/20  left-1/2 -translate-x-1/2 lg:top-10  z-[1000] lg:rounded-full">
       {/* Logo */}
       <div className="Nav_Logo w-fit flex items-center" data-testid="Nav_Logo">
         <div className="rounded-full bg-[#F3F3F3] dark:bg-[#222222] md:p-2 flex items-center justify-center md:shadow-md h-fit">
@@ -59,7 +59,7 @@ const Nav = () => {
         </div>
       </div>
       {/* Desktop Links */}
-      <div className="Nav_Link hidden md:flex font-[var(--font-plus-jakarta-sans)] gap-4 items-center">
+      <div className="Nav_Link hidden lg:flex font-[var(--font-plus-jakarta-sans)] gap-4 items-center">
         {NAV_LINKS.map((link) => (
           <Link
             key={link.href}
@@ -112,7 +112,7 @@ const Nav = () => {
         </Button>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-[#232526] dark:text-white p-2  bg-[#F3F3F3] dark:bg-[#232526] hover:bg-[#eaeaea] dark:hover:bg-[#333] transition flex items-center"
+          className="lg:hidden text-[#232526] dark:text-white p-2  bg-[#F3F3F3] dark:bg-[#232526] hover:bg-[#eaeaea] dark:hover:bg-[#333] transition flex items-center"
           aria-label="Open menu"
         >
           <TiThMenu size={30} />
@@ -122,7 +122,7 @@ const Nav = () => {
             router.push('/login');
           }}
           variant="default"
-          className="font-semibold px-6 py-2 rounded-full bg-[#FF8660] text-white hover:bg-[#D5491D] transition hidden md:block"
+          className="font-semibold px-6 py-2 rounded-full bg-[#FF8660] text-white hover:bg-[#D5491D] transition hidden lg:block"
         >
           Login
         </Button>
@@ -130,7 +130,7 @@ const Nav = () => {
       {/* Mobile Menu Drawer */}
       <div
         ref={mobileNavRef}
-        className={`Mobile_Nav top-[10vh] right-0 h-screen w-full overflow-hidden bg-[#f1e9e9] dark:bg-[#222222] shadow-2xl flex flex-col items-center py-8 absolute md:hidden border-b border-[#e5e7eb] dark:border-[#232526] z-[800]`}
+        className={`Mobile_Nav top-[10vh] right-0 h-screen w-full overflow-hidden bg-[#f1e9e9] dark:bg-[#222222]/10  backdrop-blur-xl  shadow-2xl flex flex-col items-center px-[1.5vw] py-8 absolute lg:hidden border-b border-[#e5e7eb] dark:border-t-white z-[800]`}
         style={{
           transform: menuOpen ? 'translateX(0%)' : 'translateX(100%)',
           transition: 'transform 0.5s cubic-bezier(0.77,0,0.175,1)',
