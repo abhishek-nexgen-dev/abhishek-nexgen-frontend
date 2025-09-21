@@ -14,8 +14,7 @@ const MotivationSec = () => {
   useGSAP(() => {
     let ctx = gsap.context(() => {
       ScrollTrigger.matchMedia({
-       
-        "(min-width: 1024px)": () => {
+        '(min-width: 1024px)': () => {
           if (Right_Image_Ref.current) {
             gsap.to(Right_Image_Ref.current, {
               scrollTrigger: {
@@ -33,7 +32,7 @@ const MotivationSec = () => {
           }
         },
 
-        "(max-width: 1023px)": () => {
+        '(max-width: 1023px)': () => {
           if (Right_Image_Ref.current) {
             gsap.to(Right_Image_Ref.current, {
               scrollTrigger: {
@@ -49,7 +48,7 @@ const MotivationSec = () => {
               duration: 1.2,
             });
           }
-        }
+        },
       });
     });
     return () => ctx.revert();
@@ -93,7 +92,10 @@ const MotivationSec = () => {
         </div>
 
         <div className="w-full lg:w-[40%] relative lg:absolute lg:right-0 lg:top-0 lg:bottom-0 flex items-center justify-end h-[40vh] lg:h-auto">
-          <div ref={Right_Image_Ref} className="relative w-full h-full md:h-[90%]">
+          <div
+            ref={Right_Image_Ref}
+            className="relative w-full h-full md:h-[90%]"
+          >
             <Image
               src="/Images/Motivation.png"
               alt="Engineering Mindset"

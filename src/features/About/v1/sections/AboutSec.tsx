@@ -7,11 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const AboutSec = () => {
-
   useGSAP(() => {
-    
     gsap.to('.Image_Container', {
       opacity: 1,
       duration: window.innerWidth < 1024 ? 1 : 1.5,
@@ -19,22 +16,12 @@ const AboutSec = () => {
       x: window.innerWidth < 1024 ? 0 : 80,
     });
 
-
-
-
-
-
     gsap.to('.Text_Container', {
       y: window.innerWidth < 1024 ? -120 : -80,
       duration: 1.5,
       opacity: 1,
     });
-
-
-
   }, []);
-
-
 
   return (
     <section className="w-full flex flex-col lg:flex-row overflow-hidden px-[2vw] pt-[2vh]">
