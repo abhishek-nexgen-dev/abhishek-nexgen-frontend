@@ -13,11 +13,9 @@ const MotivationSec = () => {
   const Paragraph_Ref = useRef<HTMLDivElement>(null);
   const Title_Ref = useRef<HTMLHeadingElement>(null);
 
-
   useGSAP(() => {
     const tl = gsap.timeline();
 
-   
     tl.to(Title_Ref.current, {
       scrollTrigger: {
         trigger: Title_Ref.current,
@@ -25,11 +23,11 @@ const MotivationSec = () => {
         end: 'bottom 30%',
         scrub: 2,
       },
-   
+
       opacity: 1,
 
       y: '-30%',
-   
+
       scale: 1,
       duration: 1,
     });
@@ -41,7 +39,7 @@ const MotivationSec = () => {
         end: 'bottom 50%',
         scrub: 2,
       },
-      y: "-20%",
+      y: '-20%',
       opacity: window.innerWidth < 1024 ? 1 : 0.8,
     });
 
@@ -55,9 +53,8 @@ const MotivationSec = () => {
                 start: 'top 80%',
                 end: 'bottom 50%',
                 scrub: 3,
-          
               },
-              y: "-20%",
+              y: '-20%',
               scale: 1.5,
               opacity: 1,
               delay: 1,
@@ -84,15 +81,17 @@ const MotivationSec = () => {
         },
       });
     });
-    
+
     return () => ctx.revert();
   }, []);
-
 
   return (
     <section className="w-full flex flex-col overflow-hidden px-[2vw] py-[10vh]">
       <div className="w-full text-center mb-10 md:mb-16">
-        <h2 ref={Title_Ref} className=" Title text-[1.5rem] opacity-0 lg:text-[1.8vw] font-bold inline-flex items-center justify-center mt-[8vh] mb-[3vh]">
+        <h2
+          ref={Title_Ref}
+          className=" Title text-[1.5rem] opacity-0 lg:text-[1.8vw] font-bold inline-flex items-center justify-center mt-[8vh] mb-[3vh]"
+        >
           <span className="mr-3">🔥</span>
           <span className="Title bg-clip-text text-transparent bg-gradient-to-r from-[#5BADFF] to-[#1373D1]">
             Motivation to Think Like an Engineer
@@ -102,7 +101,10 @@ const MotivationSec = () => {
       </div>
 
       <div className="w-full flex flex-col-reverse lg:flex-row relative">
-        <div ref={Paragraph_Ref} className="Paragraph w-full lg:w-[60%] min-h-[50vh] lg:min-h-0 flex flex-col px-4 lg:px-12 lg:pr-20 z-10 opacity-0 mt-[8vh]">
+        <div
+          ref={Paragraph_Ref}
+          className="Paragraph w-full lg:w-[60%] min-h-[50vh] lg:min-h-0 flex flex-col px-4 lg:px-12 lg:pr-20 z-10 opacity-0 mt-[8vh]"
+        >
           <div className="space-y-6 text-[#C4C4C4] text-lg lg:text-[1.4rem] font-[var(--font-plus-jakarta-sans)] ">
             <p className="leading-relaxed">
               Many people become developers, but an engineer is someone who
