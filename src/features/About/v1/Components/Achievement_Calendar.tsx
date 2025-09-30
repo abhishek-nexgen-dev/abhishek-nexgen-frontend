@@ -1,14 +1,19 @@
 import React, { useState, useMemo } from 'react';
 import { ResponsiveCalendar } from '@nivo/calendar';
-import { FaGithub, FaCode, FaFire, FaTrophy, FaCalendarAlt, FaChartLine } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaCode,
+  FaFire,
+  FaTrophy,
+  FaCalendarAlt,
+  FaChartLine,
+} from 'react-icons/fa';
 import { SiLeetcode, SiCodeforces } from 'react-icons/si';
 import { BsGraphUp, BsCalendarCheck, BsBarChartLine } from 'react-icons/bs';
 import { Platform, PlatformFilter } from '../type/Calender.type';
 import { contributionData } from '../constant/Calender.constant';
 
-
 const platforms: Platform[] = ['github', 'leetcode', 'codeforces', 'other'];
-
 
 const colorSchemes: Record<Platform, string[]> = {
   github: ['#1b1b1b', '#0e4429', '#006d32', '#26a641', '#39d353'],
@@ -25,7 +30,8 @@ const platformIcons = {
 };
 
 const Achievement_Calendar = () => {
-  const [selectedPlatform, setSelectedPlatform] = useState<PlatformFilter>('all');
+  const [selectedPlatform, setSelectedPlatform] =
+    useState<PlatformFilter>('all');
   let data: any = [];
 
   const currentYear = new Date().getFullYear();
@@ -57,7 +63,10 @@ const Achievement_Calendar = () => {
   }, []);
 
   const totalContributions = contributionData.length;
-  const totalValue = contributionData.reduce((sum, item) => sum + item.value, 0);
+  const totalValue = contributionData.reduce(
+    (sum, item) => sum + item.value,
+    0
+  );
 
   // Calculate additional statistics
   const getMonthName = (monthIndex: number): string => {
@@ -84,8 +93,8 @@ const Achievement_Calendar = () => {
 
   const busiestMonth = useMemo(() => {
     if (monthlyContributions.length === 0) return null;
-    return monthlyContributions.reduce((max, month) =>
-      month.count > max.count ? month : max,
+    return monthlyContributions.reduce(
+      (max, month) => (month.count > max.count ? month : max),
       monthlyContributions[0]
     );
   }, [monthlyContributions]);
@@ -100,7 +109,8 @@ const Achievement_Calendar = () => {
     let maxStreak = 1;
 
     for (let i = 1; i < sortedDays.length; i++) {
-      const dayDiff = (sortedDays[i] - sortedDays[i - 1]) / (1000 * 60 * 60 * 24);
+      const dayDiff =
+        (sortedDays[i] - sortedDays[i - 1]) / (1000 * 60 * 60 * 24);
 
       if (dayDiff === 1) {
         currentStreak++;
@@ -124,7 +134,8 @@ const Achievement_Calendar = () => {
             </span>
           </h1>
           <p className="text-gray-300 max-w-3xl mx-auto">
-            A visual representation of my coding journey across multiple platforms. Track my progress and milestones achieved over time.
+            A visual representation of my coding journey across multiple
+            platforms. Track my progress and milestones achieved over time.
           </p>
 
           {/* Summary Stats Row */}
@@ -144,14 +155,18 @@ const Achievement_Calendar = () => {
             <div className="flex items-center gap-2 bg-[#2a2a2a] py-2 px-4 rounded-full">
               <FaFire className="text-orange-400" />
               <span className="text-sm">
-                <span className="font-semibold">{longestStreak}</span> day streak
+                <span className="font-semibold">{longestStreak}</span> day
+                streak
               </span>
             </div>
             {busiestMonth && (
               <div className="flex items-center gap-2 bg-[#2a2a2a] py-2 px-4 rounded-full">
                 <FaTrophy className="text-yellow-400" />
                 <span className="text-sm">
-                  <span className="font-semibold">{busiestMonth.monthName}</span> is top month
+                  <span className="font-semibold">
+                    {busiestMonth.monthName}
+                  </span>{' '}
+                  is top month
                 </span>
               </div>
             )}
@@ -171,27 +186,31 @@ const Achievement_Calendar = () => {
             <PlatformButton
               key={stat.platform}
               active={selectedPlatform === stat.platform}
-              onClick={() => setSelectedPlatform(stat.platform as PlatformFilter)}
+              onClick={() =>
+                setSelectedPlatform(stat.platform as PlatformFilter)
+              }
               icon={platformIcons[stat.platform]}
-              label={stat.platform.charAt(0).toUpperCase() + stat.platform.slice(1)}
+              label={
+                stat.platform.charAt(0).toUpperCase() + stat.platform.slice(1)
+              }
               count={stat.count}
               colorClass={`ring-${
                 stat.platform === 'github'
                   ? 'green-400'
                   : stat.platform === 'leetcode'
-                  ? 'yellow-400'
-                  : stat.platform === 'codeforces'
-                  ? 'blue-400'
-                  : 'purple-400'
+                    ? 'yellow-400'
+                    : stat.platform === 'codeforces'
+                      ? 'blue-400'
+                      : 'purple-400'
               }`}
               bgColor={
                 stat.platform === 'github'
                   ? '#006d32'
                   : stat.platform === 'leetcode'
-                  ? '#bb8a13'
-                  : stat.platform === 'codeforces'
-                  ? '#2563eb'
-                  : '#7e22ce'
+                    ? '#bb8a13'
+                    : stat.platform === 'codeforces'
+                      ? '#2563eb'
+                      : '#7e22ce'
               }
             />
           ))}
@@ -228,10 +247,17 @@ const Achievement_Calendar = () => {
                   itemsSpacing: 10,
                   itemDirection: 'right-to-left',
                   symbolShape: 'square',
-          
                 },
               ]}
-              tooltip={({ day, value, data }: { day: string; value: string; data?: { platform?: string; details?: string } }) => (
+              tooltip={({
+                day,
+                value,
+                data,
+              }: {
+                day: string;
+                value: string;
+                data?: { platform?: string; details?: string };
+              }) => (
                 <div
                   className="bg-gradient-to-b from-[#1a1a1a] to-[#151515] border border-[#3a3a3a] p-4 min-w-[250px] max-w-[350px] rounded-lg shadow-xl animate-fadeIn"
                   style={{
@@ -259,31 +285,33 @@ const Achievement_Calendar = () => {
                               data.platform === 'github'
                                 ? 'rgba(56, 211, 79, 0.15), rgba(56, 211, 79, 0.25)'
                                 : data.platform === 'leetcode'
-                                ? 'rgba(255, 192, 30, 0.15), rgba(255, 192, 30, 0.25)'
-                                : data.platform === 'codeforces'
-                                ? 'rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.25)'
-                                : 'rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25)'
+                                  ? 'rgba(255, 192, 30, 0.15), rgba(255, 192, 30, 0.25)'
+                                  : data.platform === 'codeforces'
+                                    ? 'rgba(96, 165, 250, 0.15), rgba(96, 165, 250, 0.25)'
+                                    : 'rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.25)'
                             })`,
                             border: `1px solid ${
                               data.platform === 'github'
                                 ? 'rgba(56, 211, 79, 0.3)'
                                 : data.platform === 'leetcode'
-                                ? 'rgba(255, 192, 30, 0.3)'
-                                : data.platform === 'codeforces'
-                                ? 'rgba(96, 165, 250, 0.3)'
-                                : 'rgba(168, 85, 247, 0.3)'
+                                  ? 'rgba(255, 192, 30, 0.3)'
+                                  : data.platform === 'codeforces'
+                                    ? 'rgba(96, 165, 250, 0.3)'
+                                    : 'rgba(168, 85, 247, 0.3)'
                             }`,
                             color:
                               data.platform === 'github'
                                 ? '#39d353'
                                 : data.platform === 'leetcode'
-                                ? '#ffc01e'
-                                : data.platform === 'codeforces'
-                                ? '#60a5fa'
-                                : '#a855f7',
+                                  ? '#ffc01e'
+                                  : data.platform === 'codeforces'
+                                    ? '#60a5fa'
+                                    : '#a855f7',
                           }}
                         >
-                          <span className="mr-0.5">{platformIcons[data.platform as Platform]}</span>
+                          <span className="mr-0.5">
+                            {platformIcons[data.platform as Platform]}
+                          </span>
                           <span className="font-medium">{data.platform}</span>
                         </span>
                       )}
@@ -299,12 +327,12 @@ const Achievement_Calendar = () => {
                               data?.platform === 'github'
                                 ? '#39d353'
                                 : data?.platform === 'leetcode'
-                                ? '#ffc01e'
-                                : data?.platform === 'codeforces'
-                                ? '#60a5fa'
-                                : data?.platform
-                                ? '#a855f7'
-                                : '#4ade80',
+                                  ? '#ffc01e'
+                                  : data?.platform === 'codeforces'
+                                    ? '#60a5fa'
+                                    : data?.platform
+                                      ? '#a855f7'
+                                      : '#4ade80',
                           }}
                         >
                           {value}
@@ -321,21 +349,21 @@ const Achievement_Calendar = () => {
                             data?.platform === 'github'
                               ? '#39d353'
                               : data?.platform === 'leetcode'
-                              ? '#ffc01e'
-                              : data?.platform === 'codeforces'
-                              ? '#60a5fa'
-                              : data?.platform
-                              ? '#a855f7'
-                              : '#4ade80',
+                                ? '#ffc01e'
+                                : data?.platform === 'codeforces'
+                                  ? '#60a5fa'
+                                  : data?.platform
+                                    ? '#a855f7'
+                                    : '#4ade80',
                         }}
                       >
                         {data?.platform === 'github'
                           ? '●●●'
                           : data?.platform === 'leetcode'
-                          ? '●●●'
-                          : data?.platform === 'codeforces'
-                          ? '●●●'
-                          : '●●●'}
+                            ? '●●●'
+                            : data?.platform === 'codeforces'
+                              ? '●●●'
+                              : '●●●'}
                       </div>
                     </div>
 
@@ -348,12 +376,12 @@ const Achievement_Calendar = () => {
                             data?.platform === 'github'
                               ? '#39d353'
                               : data?.platform === 'leetcode'
-                              ? '#ffc01e'
-                              : data?.platform === 'codeforces'
-                              ? '#60a5fa'
-                              : data?.platform
-                              ? '#a855f7'
-                              : '#4ade80',
+                                ? '#ffc01e'
+                                : data?.platform === 'codeforces'
+                                  ? '#60a5fa'
+                                  : data?.platform
+                                    ? '#a855f7'
+                                    : '#4ade80',
                         }}
                       >
                         <p>{data.details}</p>
@@ -412,7 +440,11 @@ const Achievement_Calendar = () => {
             <span>Less</span>
             <div className="flex">
               {colors.map((color, i) => (
-                <div key={i} className="w-6 h-3" style={{ backgroundColor: color }} />
+                <div
+                  key={i}
+                  className="w-6 h-3"
+                  style={{ backgroundColor: color }}
+                />
               ))}
             </div>
             <span>More</span>
@@ -428,8 +460,18 @@ const Achievement_Calendar = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <StatsCard title="Total Contributions" value={totalContributions} icon={<FaCalendarAlt />} color="emerald" />
-            <StatsCard title="Total Value" value={totalValue} icon={<FaChartLine />} color="blue" />
+            <StatsCard
+              title="Total Contributions"
+              value={totalContributions}
+              icon={<FaCalendarAlt />}
+              color="emerald"
+            />
+            <StatsCard
+              title="Total Value"
+              value={totalValue}
+              icon={<FaChartLine />}
+              color="blue"
+            />
 
             {platformStats.map((stat) => (
               <StatsCard
@@ -442,16 +484,14 @@ const Achievement_Calendar = () => {
                   stat.platform === 'github'
                     ? 'green'
                     : stat.platform === 'leetcode'
-                    ? 'yellow'
-                    : stat.platform === 'codeforces'
-                    ? 'blue'
-                    : 'purple'
+                      ? 'yellow'
+                      : stat.platform === 'codeforces'
+                        ? 'blue'
+                        : 'purple'
                 }
               />
             ))}
           </div>
-
-         
         </div>
       </div>
     </div>
@@ -488,7 +528,9 @@ const PlatformButton = ({
     >
       {icon}
       <span>{label}</span>
-      <span className="bg-[#1a1a1a] px-2 py-0.5 rounded-full text-xs ml-1">{count}</span>
+      <span className="bg-[#1a1a1a] px-2 py-0.5 rounded-full text-xs ml-1">
+        {count}
+      </span>
     </button>
   );
 };
@@ -511,7 +553,8 @@ const StatsCard = ({
     green: 'from-green-500 to-green-700 border-green-700 text-green-400',
     yellow: 'from-yellow-500 to-yellow-700 border-yellow-700 text-yellow-400',
     purple: 'from-purple-500 to-purple-700 border-purple-700 text-purple-400',
-    emerald: 'from-emerald-500 to-emerald-700 border-emerald-700 text-emerald-400',
+    emerald:
+      'from-emerald-500 to-emerald-700 border-emerald-700 text-emerald-400',
     gray: 'from-gray-500 to-gray-700 border-gray-700 text-gray-400',
   };
 
@@ -525,7 +568,11 @@ const StatsCard = ({
           {subtitle && <p className="text-xs text-gray-500">{subtitle}</p>}
           <h4 className="text-white text-2xl font-bold mt-1">{value}</h4>
         </div>
-        {icon && <div className={`text-xl ${colorClasses[color].split(' ').pop()}`}>{icon}</div>}
+        {icon && (
+          <div className={`text-xl ${colorClasses[color].split(' ').pop()}`}>
+            {icon}
+          </div>
+        )}
       </div>
     </div>
   );

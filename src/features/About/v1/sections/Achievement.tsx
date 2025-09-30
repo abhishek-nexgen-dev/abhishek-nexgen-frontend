@@ -5,8 +5,6 @@ const Achievement = () => {
   return (
     <div className=" w-screen relative">
       <div className="mt-8 hidden md:block lg:mt-[12vh]">
-    
-
         <div className="w-full bg-amber-600 ">
           <Achievement_Calendar />
         </div>

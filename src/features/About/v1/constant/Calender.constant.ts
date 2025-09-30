@@ -1397,5 +1397,5 @@ export const contributionData: ContributionData[] = [
     value: 4,
     platform: 'other',
     details: '4 hours on code review',
-  }
+  },
 ];
