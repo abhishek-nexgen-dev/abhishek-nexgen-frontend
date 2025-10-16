@@ -1,5 +1,10 @@
 import { FaGithub, FaTrophy } from 'react-icons/fa6';
-import { SiLeetcode, SiDevdotto, SiCodeforces, SiHackerrank } from 'react-icons/si';
+import {
+  SiLeetcode,
+  SiDevdotto,
+  SiCodeforces,
+  SiHackerrank,
+} from 'react-icons/si';
 
 const platformData = [
   {
@@ -14,7 +19,7 @@ const platformData = [
     color: `rgba(255, 161, 22, 0.2)` as `rgba(255, 161, 22, 0.2)`,
     darkColor: '#FFA116',
     progressValue: 86,
-    link: 'https://leetcode.com/yourusername'
+    link: 'https://leetcode.com/yourusername',
   },
   {
     platform: 'GitHub',
@@ -28,7 +33,7 @@ const platformData = [
     color: `rgba(108, 198, 68, 0.15)` as `rgba(108, 198, 68, 0.15)`,
     darkColor: '#6cc644',
     progressValue: 92,
-    link: 'https://github.com/yourusername'
+    link: 'https://github.com/yourusername',
   },
   {
     platform: 'dev.to',
@@ -42,7 +47,7 @@ const platformData = [
     color: `rgba(255, 255, 255, 0.15)` as `rgba(255, 255, 255, 0.15)`,
     darkColor: '#FFFFFF',
     progressValue: 78,
-    link: 'https://dev.to/yourusername'
+    link: 'https://dev.to/yourusername',
   },
   {
     platform: 'Codeforces',
@@ -56,7 +61,7 @@ const platformData = [
     color: `rgba(31, 138, 203, 0.2)` as `rgba(31, 138, 203, 0.2)`,
     darkColor: '#1F8ACB',
     progressValue: 72,
-    link: 'https://codeforces.com/profile/yourusername'
+    link: 'https://codeforces.com/profile/yourusername',
   },
   {
     platform: 'HackerRank',
@@ -70,7 +75,7 @@ const platformData = [
     color: `rgba(0, 234, 100, 0.15)` as `rgba(0, 234, 100, 0.15)`,
     darkColor: '#00EA64',
     progressValue: 88,
-    link: 'https://www.hackerrank.com/yourusername'
+    link: 'https://www.hackerrank.com/yourusername',
   },
   {
     platform: 'Achievements',
@@ -84,7 +89,7 @@ const platformData = [
     color: `rgba(255, 215, 0, 0.15)` as `rgba(255, 215, 0, 0.15)`,
     darkColor: '#FFD700',
     progressValue: 94,
-    link: '#'
+    link: '#',
   },
 ];
 
