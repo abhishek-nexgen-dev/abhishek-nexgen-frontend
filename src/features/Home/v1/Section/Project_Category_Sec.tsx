@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { PROJECT_CATEGORY_CONSTANT } from '../constant/Project_Category.constant';
 import {
   Project_Category_Obj,
   Project_Category_Type,
