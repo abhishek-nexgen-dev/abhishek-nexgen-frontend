@@ -1,7 +1,7 @@
 export type Project_Category_Obj = {
   _id: number;
-  Category_Name: string;
-  Category_Url: string;
+  name: string;
+  url: string;
 };
 
 export interface Project_Category_Type {
